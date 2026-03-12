@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Gnomeo Fit">
+  <main style="max-width: 680px; margin: 0 auto; padding: 80px 24px; text-align: center;">
+    <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #4b5563; margin-bottom: 16px; font-family: 'Courier New', monospace;">
+      Progressive Calisthenics
+    </div>
+    <h1 style="font-size: clamp(32px, 6vw, 52px); font-weight: 400; margin-bottom: 16px; letter-spacing: -0.02em; line-height: 1.1;">
+      Train Smarter.<br/>Move Better.
+    </h1>
+    <p style="color: #64748b; font-size: 16px; line-height: 1.7; margin-bottom: 48px; max-width: 480px; margin-left: auto; margin-right: auto;">
+      A 12-week bodyweight program built for fat loss — apartment-friendly, no equipment required, with every exercise scaled to where you actually are.
+    </p>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="/gnomeo-fit/workout" style="
+        background: #166534;
+        border: 1px solid #4ade80;
+        color: #4ade80;
+        padding: 14px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.05em;
+        transition: background 0.15s;
+      ">View Workout Program →</a>
+      <a href="/gnomeo-fit/nutrition" style="
+        background: #111827;
+        border: 1px solid #1f2937;
+        color: #94a3b8;
+        padding: 14px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.05em;
+      ">Nutrition Guide →</a>
+    </div>
+    <div style="margin-top: 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: left;">
+      {[
+        { icon: "📈", label: "4 Phases", sub: "Foundation through Peak" },
+        { icon: "🏠", label: "Apartment-friendly", sub: "Zero equipment needed" },
+        { icon: "⬇️", label: "Always scalable", sub: "Easier + harder options" },
+      ].map(item => (
+        <div style="background: #111827; border: 1px solid #1f2937; border-radius: 10px; padding: 16px;">
+          <div style="font-size: 20px; margin-bottom: 6px;">{item.icon}</div>
+          <div style="font-weight: 600; font-size: 14px; margin-bottom: 2px;">{item.label}</div>
+          <div style="color: #64748b; font-size: 12px;">{item.sub}</div>
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>
