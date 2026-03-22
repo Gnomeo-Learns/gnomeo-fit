@@ -234,9 +234,9 @@ function MacroBar({ p, c, f }) {
 }
 
 function Calculator() {
-  const [weight, setWeight] = useState(200);
-  const [height, setHeight] = useState(70);
-  const [age, setAge] = useState(35);
+  const [weight, setWeight] = useState(180);
+  const [height, setHeight] = useState(66);
+  const [age, setAge] = useState(48);
   const [sex, setSex] = useState("male");
   const [activity, setActivity] = useState(1.375);
   const [goal, setGoal] = useState(-400);
