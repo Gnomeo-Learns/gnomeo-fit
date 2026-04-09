@@ -4,6 +4,7 @@ export interface Props {
   description?: string;
 }
 const { title, description = "Gnomeo Fit — Progressive calisthenics and nutrition for fat loss." } = Astro.props;
+const path = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -30,7 +31,7 @@ const { title, description = "Gnomeo Fit — Progressive calisthenics and nutrit
         z-index: 100;
       }
       nav .nav-inner {
-        max-width: 820px;
+        max-width: 1100px;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -45,23 +46,28 @@ const { title, description = "Gnomeo Fit — Progressive calisthenics and nutrit
         text-decoration: none;
         font-family: 'Courier New', monospace;
         text-transform: uppercase;
+        flex-shrink: 0;
       }
       nav .nav-links {
         display: flex;
         align-items: center;
         gap: 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
       }
+      nav .nav-links::-webkit-scrollbar { display: none; }
       nav a.nav-link {
-        font-size: 14px;
+        font-size: 13px;
         color: #cbd5e1;
         text-decoration: none;
         transition: all 0.15s;
         font-family: 'Courier New', monospace;
         font-weight: 600;
         letter-spacing: 0.04em;
-        padding: 6px 14px;
+        padding: 6px 12px;
         border-radius: 6px;
         border: 1px solid transparent;
+        white-space: nowrap;
       }
       nav a.nav-link:hover { color: #ffffff; background: #1e293b; }
       nav a.nav-link.active { color: #4ade80; background: #166534; border-color: #4ade8044; }
@@ -72,9 +78,11 @@ const { title, description = "Gnomeo Fit — Progressive calisthenics and nutrit
       <div class="nav-inner">
         <a class="brand" href="/gnomeo-fit/">GNOMEO FIT</a>
         <div class="nav-links">
-          <a href="/gnomeo-fit/workout" class={`nav-link${Astro.url.pathname.includes('workout') ? ' active' : ''}`}>Workout</a>
-          <a href="/gnomeo-fit/nutrition" class={`nav-link${Astro.url.pathname.includes('nutrition') ? ' active' : ''}`}>Nutrition</a>
-          <a href="/gnomeo-fit/log" class={`nav-link${Astro.url.pathname.includes('log') ? ' active' : ''}`}>Log</a>
+          <a href="/gnomeo-fit/workout"  class={`nav-link${path.includes('workout')  ? ' active' : ''}`}>Workout</a>
+          <a href="/gnomeo-fit/nutrition" class={`nav-link${path.includes('nutrition') ? ' active' : ''}`}>Nutrition</a>
+          <a href="/gnomeo-fit/meals"    class={`nav-link${path.includes('meals')    ? ' active' : ''}`}>Meals</a>
+          <a href="/gnomeo-fit/shopping" class={`nav-link${path.includes('shopping') ? ' active' : ''}`}>Shopping</a>
+          <a href="/gnomeo-fit/log"      class={`nav-link${path.includes('log')      ? ' active' : ''}`}>Log</a>
         </div>
       </div>
     </nav>
